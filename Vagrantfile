@@ -60,8 +60,12 @@ Vagrant.configure("2") do |config|
   end
   
   config.vm.provider :libvirt do |vm| 
+    vm.cpu_mode = "host-passthrough"
     vm.memory = "512"
-    vm.graphics_type = "vnc"
+    vm.graphics_type = "none"
+    vm.disk_device = "hda"
+    vm.machine_type = "vexpress-a15" 
+    vm.nic_model_type = "lan9118"
   end
   #
   # View the documentation for the provider you are using for more
