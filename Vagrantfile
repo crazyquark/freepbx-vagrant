@@ -58,6 +58,11 @@ Vagrant.configure("2") do |config|
 
     vb.name = "FreePBX (Centos 7)"
   end
+  
+  config.vm.provider :libvirt do |vm| 
+    vm.memory = "512"
+    vm.graphics_type = "vnc"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
