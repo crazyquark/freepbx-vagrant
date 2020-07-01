@@ -16,4 +16,6 @@ pushd freepbx
 ./install -n
 popd
 
+systemctl enable asterisk
+
 popd
