@@ -16,6 +16,10 @@ pushd freepbx
 ./install -n
 popd
 
+# Fix permissions
+fwconsole chown
+chmod 755 /var/spool/mqueue 
+
 systemctl enable asterisk
 
 popd
