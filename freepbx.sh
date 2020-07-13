@@ -26,4 +26,4 @@ fwconsole chown
 chmod 755 /var/spool/mqueue 
 
 # Show IP address on login screen
-echo -e "\nIP address: ip address show eth1 | awk '/inet / {print $2}' | cut -d/ -f1" >> /etc/issue 
+echo -e "\nIP address: \4" >> /etc/issue 
