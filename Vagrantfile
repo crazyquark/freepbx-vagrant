@@ -85,6 +85,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision :reload
 
   config.vm.provision "shell", path: "asterisk.sh"
+
+  config.vm.provision "file", source: "freepbx.service", destination: "$HOME/freepbx.service"
   config.vm.provision "shell", path: "freepbx.sh"
 
   # One last restart

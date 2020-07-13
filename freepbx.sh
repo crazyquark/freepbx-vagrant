@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'FreePBX install'
+# echo 'FreePBX install'
 sed -i 's/\(^upload_max_filesize = \).*/\120M/' /etc/php.ini
 sed -i 's/^\(User\|Group\).*/\1 asterisk/' /etc/httpd/conf/httpd.conf
 sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
@@ -16,10 +16,14 @@ pushd freepbx
 ./install -n
 popd
 
+popd
+
+mv /home/vagrant/freepbx.service /etc/systemd/system/
+systemctl enable freepbx
+
 # Fix permissions
 fwconsole chown
 chmod 755 /var/spool/mqueue 
 
-systemctl enable asterisk
-
-popd
+# Show IP address on login screen
+echo -e "\nIP address: ip address show eth1 | awk '/inet / {print $2}' | cut -d/ -f1" >> /etc/issue 
