@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
 
     # Attach USB dongle
     vb.customize ["modifyvm", :id, "--usb", "on"]
-    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--vendorid', '0x12d1', '--productid', '0x155e']
+    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Huawei USB Modem', '--vendorid', '0x12d1', '--productid', '0x155e']
   end
   
   config.vm.provider :libvirt do |vm| 
