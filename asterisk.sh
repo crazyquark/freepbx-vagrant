@@ -44,6 +44,16 @@ cp configs/samples/modules.conf.sample /etc/asterisk/modules.conf
 cp configs/samples/logger.conf.sample /etc/asterisk/logger.conf
 popd
 
+git clone https://github.com/wdoekes/asterisk-chan-dongle.git && \
+	cd asterisk-chan-dongle && \
+	./bootstrap && \
+	./configure --with-astversion=16 && \
+	make && \
+	make install
+
+# Copy config
+cp ./etc/dongle.conf /etc/asterisk/dongle.conf 
+
 popd # /usr/src
 
 echo 'Setting permissions'
