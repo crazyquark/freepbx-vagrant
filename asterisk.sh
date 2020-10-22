@@ -55,7 +55,7 @@ git clone https://github.com/wdoekes/asterisk-chan-dongle.git && \
 cp ./etc/dongle.conf /etc/asterisk/dongle.conf
 
 # Dongle permissions
-usermod -a -G dialout,lock asterisk
+usermod -a -G dialout,lock,uucp asterisk
 
 popd # /usr/src
 

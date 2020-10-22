@@ -25,7 +25,7 @@ yum -y install lynx tftp-server unixODBC mysql-connector-odbc mariadb-server mar
   httpd ncurses-devel sendmail sendmail-cf sox newt-devel libxml2-devel libtiff-devel \
   audiofile-devel gtk2-devel subversion kernel-devel git crontabs cronie \
   cronie-anacron wget vim uuid-devel sqlite-devel net-tools gnutls-devel python-devel texinfo \
-  libuuid-devel
+  libuuid-devel uucp
 
 echo 'Install PHP'
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm

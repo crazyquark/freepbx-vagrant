@@ -27,3 +27,7 @@ chmod 755 /var/spool/mqueue
 
 # Show IP address on login screen
 echo -e "\nIP address: \4{eth1}" >> /etc/issue 
+
+# TODO: hack, why are permissions wrong?
+chown asterisk:asterisk /var/lock
+chown asterisk:asterisk /dev/ttyUSB*
