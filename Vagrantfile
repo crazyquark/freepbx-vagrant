@@ -63,7 +63,7 @@ Vagrant.configure("2") do |config|
     # check vboxmanage list usbhost for available devices
     vb.customize ["modifyvm", :id, "--usb", "on"]
     vb.customize ["modifyvm", :id, "--usbehci", "on"]
-    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Huawei USB Modem', '--vendorid', '0x12d1', '--productid', '0x1001']
+    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Huawei USB Modem', '--vendorid', '0x12d1']
   end
   
   config.vm.provider :libvirt do |vm| 
