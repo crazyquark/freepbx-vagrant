@@ -68,13 +68,17 @@ Vagrant.configure("2") do |config|
   
   config.vm.provider :libvirt do |vm| 
     vm.cpu_mode = "host-passthrough"
-    vm.memory = "512"
+    vm.memory = "256"
     vm.graphics_type = "none"
     vm.disk_device = "hda"
-    vm.machine_type = "vexpress-a15" 
-    vm.nic_model_type = "lan9118"
+    vm.machine_type = "virt"
+#   vm.machine_type = "vexpress-a15" 
+    vm.nic_model_type = "virtio-net-pci"
     vm.disk_bus = "sata"
     vm.features = []
+    vm.video_type = "vga"
+    vm.video_vram = 16
+#   vm.usb_controller :model => "ehci"
   end
   #
   # View the documentation for the provider you are using for more
